@@ -20,9 +20,10 @@ It is very easy to use and fun.
 ### Installation
 
  It is very easy to use.
-1.get the source code form [here](https://github.com/pettibetty/frontend-nanodegree-arcade-game)
+ 
+1. get the source code form [here](https://github.com/pettibetty/frontend-nanodegree-arcade-game)
 
-2.download it and use it.
+2. download it and use it.
 
- ### Bugs
+### Bugs
  At the moment I have got the basic features working, if you can across any problem, bug please let me know.
