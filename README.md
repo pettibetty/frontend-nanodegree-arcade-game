@@ -6,14 +6,15 @@ Students should use this [rubric](https://www.udacity.com/course/viewer/#!/c-nd0
 For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
 
 ## Introduction
----------------
+
 This is my nanodegree arcade game. It is about creating a game using _html canvas_ and _javascript object oriented programming_ 
 It is very easy to use and fun.
 
 ### How this game works
 
-1.Before the game is loaded the use is ask to select between a boy or girl player.
-2.If the player gets his/her way to the to water then the he/she scores a point.
+1. Before the game is loaded the use is ask to select between a boy or girl player.
+
+2. If the player gets his/her way to the to water then the he/she scores a point.
 3. If the player collises with an em=nemy then he/she loses one point. 
 
 ### Installation
