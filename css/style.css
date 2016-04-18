@@ -1,3 +1,14 @@
 body {
     text-align: center;
 }
+#score {
+    width: 100px;
+    float: left;
+    margin-top: 54px;
+}
+input[type="number"] {
+    width: 80px;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid rgb(208, 96, 54);
+}
