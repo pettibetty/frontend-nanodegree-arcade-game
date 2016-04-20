@@ -1,4 +1,16 @@
+//variable to prompt user about selecting a player
 var selectedPlayer = prompt("Enter 1 for boy player or 2 for girl player");
+
+//After 1 minute of playing an alert of game over pops up
+setTimeout(function(){ 
+    alert("GAME OVER! You scored:" +" "+ document.getElementById('myScore').value);
+    document.getElementById('myScore').value = 0;
+
+}, 60000);
+
+//Tile width and height
+var tileWidth = 101,
+    tileHeight = 83;
 
 // Enemies our player must avoid
 var Enemy = function(x, y,speed) {
@@ -27,7 +39,7 @@ Enemy.prototype.update = function(dt) {
     this.x = this.x + this.speed * dt;
     if (this.x > 500) {
         this.x = -100;
-    };
+    }
 
 };
 
@@ -45,15 +57,16 @@ Enemy.prototype.render = function() {
 var Player = function (x, y) {
     this.x = x;
     this.y = y;
-   this.sprite_2 = 'images/char-cat-girl.png';
-   this.sprite_1 = 'images/char-boy.png';
+    this.sprite_2 = 'images/char-cat-girl.png';
+    this.sprite_1 = 'images/char-boy.png';
    
   
 
 };
 
  Player.prototype.update = function() {
-   
+
+   // no op
             
 };
 
@@ -79,22 +92,22 @@ Player.prototype.render = function() {
 Player.prototype.handleInput = function(allowedKeys) {
     if (allowedKeys == "left") {
         if (this.x > 10) {
-            this.x -= 50;
+            this.x -= tileWidth;
         }
     } else if (allowedKeys == "right") {
         if (this.x <= 350) {
-            this.x += 50;
+            this.x += tileWidth;
         }
     } else if (allowedKeys == "up") {
         if (this.y > 10 ) {
-            this.y -= 50;
+            this.y -= tileHeight;
         }
         
     
     }
     else if (allowedKeys == "down") {
         if (this.y < 400) {
-            this.y += 50;
+            this.y += tileHeight;
         }
     }
       
@@ -112,7 +125,7 @@ var enemy_3 = new Enemy(100,220, 200);
 
 var allEnemies = [ enemy_1, enemy_2, enemy_3];
 
-var player = new Player(200,430);
+var player = new Player(200,400);
 
 
 
@@ -130,47 +143,6 @@ document.addEventListener('keyup', function(e) {
     };
 
     player.handleInput(allowedKeys[e.keyCode]);
-     
+    
 });
-
-//Check if a Collision has happened
-//If so then call the reset function, which bring the player back to the starting point otherwise player wins and game restarts.
-function checkCollisions(){
-    //a variable to collect the core
-    var new_score;
-
-    //Position of the player after the reset
-    var reset = function () {
-        player.x = 200;
-        player.y = 380;
-    }
-     document.getElementById("myScore").defaultValue = 0;
-
-    for (var i = 0; i < allEnemies.length; i++) {
-        if (allEnemies[i].x <= (player.x + 30) &&
-            (allEnemies[i].x + 30) >= player.x &&
-            allEnemies[i].y <= (player.y + 30) &&
-            (allEnemies[i].y + 30) >= player.y) {
-
-             if(parseInt(document.getElementById('myScore').value) == 0) {
-
-                document.getElementById('myScore').value = 0;
-             }
-             else {
-                 new_score = parseInt(document.getElementById('myScore').value ) - 1;
-                document.getElementById('myScore').value = new_score;
-
-             }
-            reset();
-       
-        }
-      }
-
-    if (player.y == -20){
-      reset();
-      new_score = document.getElementById('myScore').value;
-      document.getElementById('myScore').value = parseInt(new_score) + 1;
-    }
-}
-
 

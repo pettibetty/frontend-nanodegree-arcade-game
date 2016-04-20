@@ -10,20 +10,21 @@ For detailed instructions on how to get started, check out this [guide](https://
 This is my nanodegree arcade game. It is about creating a game using _html canvas_ and _javascript object oriented programming_ 
 It is very easy to use and fun.
 
-### How this game works
-
-1. Before the game is loaded the use is ask to select between a boy or girl player.
-
-2. If the player gets his/her way to the to water then the he/she scores a point.
-3. If the player collises with an em=nemy then he/she loses one point. 
-
 ### Installation
 
  It is very easy to use.
  
 1. get the source code form [here](https://github.com/pettibetty/frontend-nanodegree-arcade-game)
 
-2. download it and use it.
+2. download it, open index.html in your browser and.
+
+### How this game works
+
+1. Before the game is loaded the use is ask to select between a boy or girl player.
+
+2. If the player gets his/her way to the to water then the he/she scores a point.
+3. If the player collises with an enemy then he/she loses one point. 
+4. To play use the cursor keys. Cursor Up key to move up, Cursor down to move down, cursor left to move left, cursor right to move right. 
 
 ### Bugs
  At the moment I have got the basic features working, if you can across any problem, bug please let me know.

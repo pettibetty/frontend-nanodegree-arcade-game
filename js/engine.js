@@ -82,6 +82,47 @@ var Engine = (function(global) {
         updateEntities(dt);
          checkCollisions();
     }
+    
+    //Check if a Collision has happened
+    //If so then call the reset function, which bring the player back to the starting point otherwise player wins and game restarts.
+    function checkCollisions(){
+        //a variable to collect the core
+        var new_score;
+
+        //Position of the player after the reset
+        var reset = function () {
+            player.x = 200;
+            player.y = 380;
+        };
+      
+         document.getElementById("myScore").defaultValue = 0;
+
+        for (var i = 0; i < allEnemies.length; i++) {
+            if (allEnemies[i].x <= (player.x + 40) &&
+                (allEnemies[i].x + 40) >= player.x &&
+                allEnemies[i].y <= (player.y + 40) &&
+                (allEnemies[i].y + 40) >= player.y) {
+
+                if(parseInt(document.getElementById('myScore').value) === 0) {
+
+                    document.getElementById('myScore').value = 0;
+                }
+                else {
+                    new_score = parseInt(document.getElementById('myScore').value ) - 1;
+                    document.getElementById('myScore').value = new_score;
+
+                }
+                reset();
+           
+            }
+          }
+
+        if (player.y === -35){
+            reset();
+            new_score = document.getElementById('myScore').value;
+            document.getElementById('myScore').value = parseInt(new_score) + 1;
+        }
+    }
 
     /* This is called by the update function and loops through all of the
      * objects within your allEnemies array as defined in app.js and calls
@@ -135,7 +176,7 @@ var Engine = (function(global) {
                  * we're using them over and over.
                  */
                 ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83);
-               
+
 
             }
         }
