@@ -16,7 +16,7 @@ It is very easy to use and fun.
  
 1. get the source code form [here](https://github.com/pettibetty/frontend-nanodegree-arcade-game)
 
-2. download it, open index.html in your browser and reday to play.
+2. download it, open index.html in your browser and ready to play.
 
 ### How this game works
 
